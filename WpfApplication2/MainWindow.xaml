@@ -11,22 +11,24 @@
         <Style TargetType="Image" x:Key="ImageStyle">
             <Setter Property="Height" Value="75"/>
             <Setter Property="Width" Value="75"/>
+            <Setter Property="Source" Value="noimage.png"/>
             <Setter Property="AllowDrop" Value="True"/>
+            <EventSetter Event="Drop" Handler="DropHandler"/>
         </Style>
     </Window.Resources>
     <Grid>
-        <GroupBox>
+        <GroupBox >
             <Grid>
-                <ListBox x:Name="listbox">
+                <ListBox x:Name="listbox" >
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" >
                                 <TextBlock Text="{Binding}"/>
                                 <Border Style="{StaticResource BorderStyle}">
-                                    <Image Style="{StaticResource ImageStyle}" Drop="ThisDrop"/>
+                                    <Image Style="{StaticResource ImageStyle}" />
                                 </Border>
                                 <Border Style="{StaticResource BorderStyle}">
-                                    <Image Style="{StaticResource ImageStyle}" Drop="ThatDrop"/>
+                                    <Image Style="{StaticResource ImageStyle}" />
                                 </Border>
                             </StackPanel>
                         </DataTemplate>
